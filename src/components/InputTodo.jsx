@@ -3,15 +3,11 @@ import styled from "styled-components";
 
 export const InputTodo = () => {
   return (
-    <SContainer>
+    <div>
       <SInput type="text" placeholder="Add todo" />
-    </SContainer>
+    </div>
   );
 };
-
-const SContainer = styled.div`
-  padding: 10px;
-`;
 
 const SInput = styled.input`
   font-size: 16px;

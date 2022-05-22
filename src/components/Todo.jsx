@@ -3,25 +3,19 @@ import styled from "styled-components";
 
 export const Todo = () => {
   return (
-    <SContainer>
-      <SLabel>
-        <SInput type="checkbox" />
-        <span>aaa</span>
-      </SLabel>
-    </SContainer>
+    <SLabel>
+      <SInput type="checkbox" />
+      <span>aaa</span>
+    </SLabel>
   );
 };
-
-const SContainer = styled.div`
-  padding: 0 10px;
-`;
 
 const SLabel = styled.label`
   display: flex;
   align-items: center;
   font-size: 18px;
   color: #333;
-  padding: 5px 10px;
+  padding: 5px 15px;
   margin: -1px 0;
   border: 1px solid #e9e9e9;
   border-radius: 5px;

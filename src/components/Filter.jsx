@@ -14,7 +14,7 @@ export const Filter = () => {
 const SContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0 10px 10px;
+  padding: 15px 0;
 `;
 
 const SLink = styled.a`

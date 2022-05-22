@@ -9,20 +9,22 @@ import { Todo } from "./components/Todo";
 
 const App = () => {
   return (
-    <SContainer>
+    <SCard>
       <Header />
-      <InputTodo />
-      <Filter />
-      {/* TODO: stateをループさせる */}
-      <Todo />
-      <Todo />
-      <Todo />
-      <SCountArea>3 todos</SCountArea>
-    </SContainer>
+      <SContainer>
+        <InputTodo />
+        <Filter />
+        {/* TODO: stateをループさせる */}
+        <Todo />
+        <Todo />
+        <Todo />
+        <SCountArea>3 todos</SCountArea>
+      </SContainer>
+    </SCard>
   );
 };
 
-const SContainer = styled.div`
+const SCard = styled.div`
   width: 700px;
   background-color: #fff;
   margin: 0 auto;
@@ -30,8 +32,12 @@ const SContainer = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, .1);
 `;
 
+const SContainer = styled.div`
+  padding: 15px;
+`;
+
 const SCountArea = styled.div`
-  padding: 10px;
+  padding-top: 15px;
 `;
 
 export default App;
