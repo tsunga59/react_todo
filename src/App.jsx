@@ -17,7 +17,7 @@ const App = () => {
       <Todo />
       <Todo />
       <Todo />
-      <p>3 todos</p>
+      <SCountArea>3 todos</SCountArea>
     </SContainer>
   );
 };
@@ -28,6 +28,10 @@ const SContainer = styled.div`
   margin: 0 auto;
   border-radius: 5px;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, .1);
+`;
+
+const SCountArea = styled.div`
+  padding: 10px;
 `;
 
 export default App;
