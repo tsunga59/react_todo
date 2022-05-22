@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-
 import "./App.css";
+
+import { Header } from "./components/Header";
 
 const App = () => {
   return (
     <SContainer>
-      <header>Todo App</header>
+      <Header />
       <div className="input-area">
         <input type="text" placeholder="add todo" />
         <button>Add</button>
