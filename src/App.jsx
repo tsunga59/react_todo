@@ -3,15 +3,13 @@ import styled from "styled-components";
 import "./App.css";
 
 import { Header } from "./components/Header";
+import { InputTodo } from "./components/InputTodo";
 
 const App = () => {
   return (
     <SContainer>
       <Header />
-      <div className="input-area">
-        <input type="text" placeholder="add todo" />
-        <button>Add</button>
-      </div>
+      <InputTodo />
       <div className="filter-area">
         <a href="#">All</a>
         <a href="#">Todo</a>
@@ -37,9 +35,9 @@ const App = () => {
 };
 
 const SContainer = styled.div`
-  width: 750px;
+  width: 700px;
+  background-color: #fff;
   margin: 0 auto;
-  padding: 30px;
 `;
 
 export default App;
