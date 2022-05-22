@@ -5,6 +5,7 @@ import "./App.css";
 import { Header } from "./components/Header";
 import { InputTodo } from "./components/InputTodo";
 import { Filter } from "./components/Filter";
+import { Todo } from "./components/Todo";
 
 const App = () => {
   return (
@@ -12,20 +13,10 @@ const App = () => {
       <Header />
       <InputTodo />
       <Filter />
-      <div className="todo-area">
-        <label>
-          <input type="checkbox" />
-          <span>aaa</span>
-        </label>
-        <label>
-          <input type="checkbox" />
-          <span>bbb</span>
-        </label>
-        <label>
-          <input type="checkbox" />
-          <span>ccc</span>
-        </label>
-      </div>
+      {/* TODO: stateをループさせる */}
+      <Todo />
+      <Todo />
+      <Todo />
       <p>3 todos</p>
     </SContainer>
   );
