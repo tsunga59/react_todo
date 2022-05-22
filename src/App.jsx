@@ -4,17 +4,14 @@ import "./App.css";
 
 import { Header } from "./components/Header";
 import { InputTodo } from "./components/InputTodo";
+import { Filter } from "./components/Filter";
 
 const App = () => {
   return (
     <SContainer>
       <Header />
       <InputTodo />
-      <div className="filter-area">
-        <a href="#">All</a>
-        <a href="#">Todo</a>
-        <a href="#">Done</a>
-      </div>
+      <Filter />
       <div className="todo-area">
         <label>
           <input type="checkbox" />
@@ -38,6 +35,8 @@ const SContainer = styled.div`
   width: 700px;
   background-color: #fff;
   margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, .1);
 `;
 
 export default App;
