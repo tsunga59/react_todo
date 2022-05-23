@@ -10,11 +10,15 @@ import { Todo } from "./components/Todo";
 const App = () => {
   const [todos, setTodos] = useState([]);
 
+  const onKeyPressAddTodo = text => {
+    setTodos([...todos, { text, done: false }]);
+  };
+
   return (
     <SCard>
       <Header />
       <SContainer>
-        <InputTodo />
+        <InputTodo onKeyPress={onKeyPressAddTodo} />
         <Filter />
         {todos.map((todo) => (
           <Todo key={todo.text} todo={todo} />

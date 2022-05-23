@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-export const InputTodo = () => {
+export const InputTodo = (props) => {
+  const { onKeyPress } = props;
+  const [todoText, setTodoText] = useState("");
+
+  const onChangeTodoText = e => setTodoText(e.target.value);
+
+  const onKeyPressEnter = e => {
+    if (e.key === "Enter") {
+      if (todoText === "") return;
+      onKeyPress(todoText);
+      setTodoText("");
+    }
+  }
+
   return (
     <div>
-      <SInput type="text" placeholder="Add todo" />
+      <SInput type="text" placeholder="Add todo" value={todoText} onChange={onChangeTodoText} onKeyPress={onKeyPressEnter} />
     </div>
   );
 };
