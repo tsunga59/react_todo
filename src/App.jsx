@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import "./App.css";
 
@@ -8,17 +8,18 @@ import { Filter } from "./components/Filter";
 import { Todo } from "./components/Todo";
 
 const App = () => {
+  const [todos, setTodos] = useState([]);
+
   return (
     <SCard>
       <Header />
       <SContainer>
         <InputTodo />
         <Filter />
-        {/* TODO: stateをループさせる */}
-        <Todo />
-        <Todo />
-        <Todo />
-        <SCountArea>3 todos</SCountArea>
+        {todos.map((todo) => (
+          <Todo key={todo.text} todo={todo} />
+        ))}
+        <SCountArea>{todos.length} todos</SCountArea>
       </SContainer>
     </SCard>
   );

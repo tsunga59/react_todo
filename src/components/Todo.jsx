@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Todo = () => {
+export const Todo = (props) => {
+  const { todo } = props;
+
   return (
     <SLabel>
-      <SInput type="checkbox" />
-      <span>aaa</span>
+      <SInput type="checkbox" checked={todo.done} />
+      <span>{todo.text}</span>
     </SLabel>
   );
 };
