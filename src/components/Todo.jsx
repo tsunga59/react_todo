@@ -2,11 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 export const Todo = (props) => {
-  const { todo } = props;
+  const { todo, onCheck } = props;
+
+  const onChangeCheck = () => {
+    onCheck(todo);
+  };
 
   return (
     <SLabel>
-      <SInput type="checkbox" checked={todo.done} />
+      <SInput type="checkbox" checked={todo.done} onChange={onChangeCheck} />
       <span>{todo.text}</span>
     </SLabel>
   );
