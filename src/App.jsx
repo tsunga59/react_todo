@@ -17,6 +17,12 @@ const App = () => {
 
   const onChangeFilter = (value) => setFilter(value);
 
+  const displayTodos = todos.filter((todo) => {
+    if (filter === 'ALL') return todo;
+    if (filter === 'TODO') return !todo.done;
+    if (filter === 'DONE') return todo.done;
+  });
+
   const onCheckDone = (checked) => {
     const newTodos = todos.map((todo) => {
       if (todo.text === checked.text) {
@@ -33,10 +39,10 @@ const App = () => {
       <SContainer>
         <InputTodo onKeyPress={onKeyPressAddTodo} />
         <Filter onChange={onChangeFilter} value={filter} />
-        {todos.map((todo) => (
+        {displayTodos.map((todo) => (
           <Todo key={todo.text} todo={todo} onCheck={onCheckDone} />
         ))}
-        <SCountArea>{todos.length} todos</SCountArea>
+        <SCountArea>{filter === 'ALL' ? displayTodos.length : `${displayTodos.length}/${todos.length}`} todos</SCountArea>
       </SContainer>
     </SCard>
   );
