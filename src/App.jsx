@@ -12,8 +12,13 @@ const App = () => {
   const [filter, setFilter] = useState('ALL');
 
   const onKeyPressAddTodo = (text) => {
+    if (existSameTodo(text)) return;
     setTodos([...todos, { text, done: false }]);
   };
+
+  const existSameTodo = (newText) => {
+    return todos.some((todo) => todo.text === newText);
+  }
 
   const onChangeFilter = (value) => setFilter(value);
 
