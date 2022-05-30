@@ -9,10 +9,13 @@ import { Todo } from "./components/Todo";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
+  const [filter, setFilter] = useState('ALL');
 
   const onKeyPressAddTodo = (text) => {
     setTodos([...todos, { text, done: false }]);
   };
+
+  const onChangeFilter = (value) => setFilter(value);
 
   const onCheckDone = (checked) => {
     const newTodos = todos.map((todo) => {
@@ -29,7 +32,7 @@ const App = () => {
       <Header />
       <SContainer>
         <InputTodo onKeyPress={onKeyPressAddTodo} />
-        <Filter />
+        <Filter onChange={onChangeFilter} value={filter} />
         {todos.map((todo) => (
           <Todo key={todo.text} todo={todo} onCheck={onCheckDone} />
         ))}
